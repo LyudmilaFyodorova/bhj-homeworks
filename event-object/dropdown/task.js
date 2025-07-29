@@ -1,16 +1,18 @@
-const dropdownValue = document.querySelector('.dropdown__value');
-const dropdownList = document.querySelector('.dropdown__list');
-const dropdownItems = document.querySelectorAll('.dropdown__item');
-const dropdownLinks = document.querySelectorAll('.dropdown__link');
+const dropdownMenu = document.querySelectorAll('.dropdown');
 
-dropdownValue.onclick = function () {
-    dropdownList.classList.toggle("dropdown__list_active");
-}
+dropdownMenu.forEach(dropdown => {
+    const dropdownValue = dropdownMenu.querySelector('.dropdown__value');
+    const dropdownList = dropdownMenu.querySelector('.dropdown__list');
+    const dropdownLinks = dropdownMenu.querySelectorAll('.dropdown__link');
 
-dropdownItems.forEach(item => item.onclick = function () {
-    dropdownValue.textContent = 
-})
+    dropdownValue.addEventListener('click', function () {
+        dropdownList.classList.toggle("dropdown__list_active");
+    })
 
-dropdownLinks.addEventListener('click', (event) => {
-    event.preventDefault()
+    dropdownLinks.forEach(item => item.addEventListener('click', (event) => {
+        dropdownValue.textContent = event.currentTarget.textContent;
+        dropdownList.classList.remove("dropdown__list_active");
+        event.preventDefault();
+
+    }))
 })
