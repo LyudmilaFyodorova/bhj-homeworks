@@ -11,8 +11,6 @@ tabs.forEach(item => item.addEventListener('click', function () {
         tabContents[activeTabContent].classList.remove("tab__content_active");
     }
 
-    tabs.forEach(item => item.addEventListener('click', (event) => {
-        tabs[activeTabPosition].classList.add("tab_active");
-        tabs[activeTabPosition].classList.add("tab__content_active");
-    }))
+    tabs[activeTabPosition].classList.add("tab_active");
+    tabs[activeTabPosition].classList.add("tab__content_active");
 }))

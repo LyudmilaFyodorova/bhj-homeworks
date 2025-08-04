@@ -1,5 +1,15 @@
 const rotatorCases = document.querySelectorAll('.rotator__case');
 
-const tiverId = setInterval(() => rotatorCases.forEach(item => item.addEventListener('click', (event) => {
-    item.classList.toggle('rotator__case_active');
-})), 1000);
+let rotatorCaseActive = document.querySelector('.rotator__case_active');
+
+setInterval(() => {
+    rotatorCaseActive.classList.remove('rotator__case_active');
+    if (rotatorCaseActive.nextElementSibling) {
+        rotatorCaseActive = rotatorCaseActive.nextElementSibling;
+        rotatorCaseActive.classList.add('rotator__case_active')
+
+    } else {
+        rotatorCaseActive = document.querySelector('.rotator').firstElementChild;
+        rotatorCaseActive.classList.add('rotator__case_active')
+    }
+}, 1000);
