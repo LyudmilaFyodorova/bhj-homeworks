@@ -1,17 +1,22 @@
-const tooltip = document.querySelectorAll('.tooltip');
 const hasTooltip = document.querySelectorAll('.has-tooltip');
+const tooltip = document.querySelectorAll('.tooltip');
 
-tooltip.forEach(element => {
-    const { top, bottom } = element.getBoundingClientRect();
-    if (bottom > 0 && top < window.innerHeight) {
-        element.classList.add('tooltip_active');
+tasksList.insertAdjacentHTML('afterbegin',
+`<div class="tooltip">Текст подсказки</div>`);
+
+/**let div = document.createElement('div');
+div.className = "tooltip";
+div.textContent = hasTooltip.title;
+document.body.append(div);**/
+
+
+hasTooltip.forEach(item => item.addEventListener('click', () => {
+    if () {
+        item.classList.toggle('tooltip_active');
+        return;
     } else {
-        element.classList.remove('tooltip_active');
+        tooltip.innerText = hasTooltip.title;
+        item.classList.add('tooltip_active');
     }
+}))
 
-    tooltip.innerText = hasTooltip.title;
-})
-
-hasTooltip.addEventListener('click', () => {
-    
-})
