@@ -17,13 +17,15 @@ tasksAdd.addEventListener('click', event => {
 </div>`);
     }
 
+    const taskRemove = document.querySelector('.task__remove');
+    const taskTitle = document.querySelector('.task__title');
+
+    taskRemove.addEventListener('click', () => {
+        taskTitle.remove();
+        taskRemove.remove();
+    })
+
 })
 
 
-const taskRemove = document.querySelector('task__remove');
-const taskTitle = document.querySelector('task__title');
-
-taskRemove.addEventListener('click', () => {
-    taskTitle.remove();
-})
 
