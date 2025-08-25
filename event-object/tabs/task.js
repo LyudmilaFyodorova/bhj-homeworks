@@ -1,3 +1,4 @@
+
 const tabs = document.querySelectorAll('.tab');
 const tabContents = document.querySelectorAll('.tab__content');
 const tabArray = Array.from(tabs);

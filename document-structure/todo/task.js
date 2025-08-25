@@ -5,7 +5,6 @@ const tasksAdd = document.getElementById('tasks__add');
 tasksAdd.addEventListener('click', event => {
     event.preventDefault();
     taskInput.value = taskInput.value.trim();
-    const newItem = document.createElement('div');
 
     if (taskInput.value) {
         tasksList.insertAdjacentHTML('afterbegin',
@@ -15,17 +14,16 @@ tasksAdd.addEventListener('click', event => {
   </div>
   <a href="#" class="task__remove">&times;</a>
 </div>`);
+
+        taskInput.value = '';
     }
 
     const taskRemove = document.querySelector('.task__remove');
-    const taskTitle = document.querySelector('.task__title');
+    const task = document.querySelector('.task');
+
 
     taskRemove.addEventListener('click', () => {
-        taskTitle.remove();
-        taskRemove.remove();
+        task.remove();
     })
 
 })
-
-
-

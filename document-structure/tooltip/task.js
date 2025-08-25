@@ -6,7 +6,7 @@ const tooltip = document.querySelector('.tooltip');
 
 hasTooltip.forEach(item => item.addEventListener('click', event => {
     event.preventDefault();
-    if (item.title === tooltip.textContent) {
+    if (item.title === tooltip.textContent && tooltip.className.includes('tooltip_active')) {
         tooltip.classList.remove('tooltip_active');
         return;
     } else {
@@ -16,7 +16,7 @@ hasTooltip.forEach(item => item.addEventListener('click', event => {
 
     let position = item.getBoundingClientRect();
     let leftPosition = position.left;
-    let topPosition = position.top;
+    let topPosition = position.top + 20;
 
     tooltip.style.left = leftPosition + 'px';
     tooltip.style.top = topPosition + 'px';

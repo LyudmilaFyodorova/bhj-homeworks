@@ -26,18 +26,21 @@ productAdd.forEach(element => element.addEventListener('click', event => {
     const productId = product.dataset.id;
     const quantity = document.querySelector('.product__quantity-value');
     const productQuantity = parseInt(quantity.textContent);
+
     const cartProducts = document.querySelector('.cart__products');
+    const cartProductsArray = Array.from(cartProducts);
+
     const cartProductCount = document.querySelector('.cart__product-count');
 
-    if (cartProduct.dataset.id === product.dataset.id) {
+    const productInCard = cartProductsArray.find(element => element.dataset.id === productId);
+
+    if (productInCard) {
         cartProductCount.textContent = productQuantity;
     } else {
         cartProducts.insertAdjacentHTML('afterbegin',
-            `<div class="cart__product" data-id>
-            <img class="cart__product-image">
-            <div class="cart__product-count"></div>
+            `<div class="cart__product" data-id="${productId}">
+            <img class="cart__product-image" src="${productImage.src}">
+            <div class="cart__product-count">${productQuantity}</div>
             </div>`);
     }
-    const cartProduct = document.querySelector('.cart__product');
 }))
-
