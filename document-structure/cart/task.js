@@ -21,10 +21,10 @@ dec.forEach(item => item.addEventListener('click', function () {
 productAdd.forEach(element => element.addEventListener('click', event => {
     event.preventDefault();
 
-    const product = document.querySelector('.product');
-    const productImage = document.querySelector('.product__image');
+    const product = element.closest('.product');
+    const productImage = product.querySelector('.product__image');
     const productId = product.dataset.id;
-    const quantity = document.querySelector('.product__quantity-value');
+    const quantity = product.querySelector('.product__quantity-value');
     const productQuantity = parseInt(quantity.textContent);
 
     const cartProducts = document.querySelector('.cart__products');
