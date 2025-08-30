@@ -14,10 +14,10 @@ xhr.onreadystatechange = function () {
 
         items.insertAdjacentHTML('afterbegin',
             `<div class="item__code">
-                ${response.CharCode}
+                ${response.valute.CharCode}
             </div>
             <div class="item__value">
-                ${response.Value}
+                ${response.valute.Value}
             </div>
             <div class="item__currency">
                 руб.
